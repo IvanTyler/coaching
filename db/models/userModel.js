@@ -5,9 +5,9 @@ const usersSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    lastName:{
-      type: String,
-      required: true,
+    lastName: {
+        type: String,
+        required: true,
     },
     email: {
         type: String,
@@ -23,10 +23,6 @@ const usersSchema = mongoose.Schema({
     },
     choosedSession:{
         type: mongoose.Schema.Types.ObjectId, ref: 'Sessions'
-    },
-    rating:{
-        type: Number,
-        default: 0,
     }
 })
 
