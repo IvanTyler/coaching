@@ -18,4 +18,5 @@ const dbConnectionURL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 module.exports = {
     dbConnectionURL,
     options,
+    DB_HOST, DB_NAME, DB_PORT
 };
