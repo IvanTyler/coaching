@@ -4,14 +4,6 @@ const sessionSchema = mongoose.Schema({
     creator:{
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
     },
-    title:{
-        type: String,
-        required: true,
-    },
-    description:{
-        type: String,
-        required: true,
-    },
     date:{
         type: Number,
         required: true,
@@ -29,9 +21,6 @@ const sessionSchema = mongoose.Schema({
     feedback:{
       type: Boolean,
     },
-    category:{
-        type: mongoose.Schema.Types.ObjectId, ref: 'Category',
-    }
 })
 
 module.exports = mongoose.model('Session', sessionSchema);
