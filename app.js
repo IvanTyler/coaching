@@ -54,7 +54,7 @@ app.use(morgan('dev'));
 app.use((req, res, next) => {
   if (req.session.user?.id) {
     res.locals.id = req.session.user.id;
-    res.locals.name = req.session.user.name;
+    res.locals.name = req.session.user.firstName;
     res.locals.email = req.session.user.email;
   }
   next();
@@ -63,7 +63,6 @@ app.use((req, res, next) => {
 
 app.use("/", indexRouter)
 app.use('/auth', authRouter)
-app.use('/users', userRouter)
 
 
 app.listen(PORT, () => {

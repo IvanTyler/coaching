@@ -11,12 +11,13 @@ router.get('/signup',  (req, res) => {
 })
 
 router.post('/signup', async (req, res) => {  
-  const {name, email, password} = req.body
+  const {firstName, lastName, email, password} = req.body
   const hash = await bcrypt.hash(password, saltRound);
 
   try {
     const newUser = await User.create({
-      name,
+      firstName,
+      lastName,
       email,
       password: hash,
     });
@@ -24,7 +25,7 @@ router.post('/signup', async (req, res) => {
     if(newUser){      
       req.session.user = {
         id: newUser._id,
-        name: newUser.name,
+        firstName: newUser.firstName,
         email: newUser.email,
       }
     }
@@ -53,7 +54,7 @@ router.post('/signin', async (req, res) => {
       req.session.newId = findUser._id;
       req.session.user = {
         id: findUser._id,
-        name: findUser.name,
+        firstName: findUser.firstName,
         email: findUser.email,
       }
       
