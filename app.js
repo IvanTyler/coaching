@@ -21,7 +21,7 @@ connect();
 console.log();
 app.set("view engine", "hbs");
 app.set("cookieName", "userCookie");
-app.set('views', path.join(process.env.PWD, 'src', 'views'));
+app.set('views', path.join(__dirname, 'src', 'views'));
 
 const sessionParser = sessions({
   name: app.get("cookieName"),
@@ -42,8 +42,8 @@ const sessionParser = sessions({
 app.use(sessionParser);
 
 
-app.use(express.static(path.join(process.env.PWD, "public")));
-hbs.registerPartials(path.join(process.env.PWD, "src", "views", "partials"));
+app.use(express.static(path.join(__dirname, "public")));
+hbs.registerPartials(path.join(__dirname, "src", "views", "partials"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
