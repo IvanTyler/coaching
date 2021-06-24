@@ -1,1 +1,70 @@
+* {
+    text-decoration: none !important;
+}
 
+.btn-main{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d6efd;
+    color: #fff;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 5px;
+}
+.btn-main:hover{
+    color: #fff;
+}
+
+.profile-choice-role-title{
+    text-align: center;
+}
+
+.section-profile-choice-role{
+    display: flex;
+}
+
+.profile-choice-role-block{
+    width: 100%;
+    padding: 20px;
+    border: solid 1px #000;
+}
+
+.profile-choice-role-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.profile-choice-role-current-session{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.choice-role-current-session-img{
+    position: absolute;
+    left: -40px;
+    width: 30px;
+}
+
+.profile-choice-role-content .btn-main{
+    width: 170px;
+    margin-top: 20px;
+    margin: 30px auto 0;
+}
+
+.profile-choice-role-title-session{
+    font-size: 18px;
+}
+
+.profile-choice-role-title-session{
+    position: relative;
+}
+
+.wrapper-profile-choice-role-session.completed {
+    margin-top: 20px;
+}
