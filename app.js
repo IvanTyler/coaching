@@ -12,13 +12,13 @@ const hbs = require("hbs")
 
 const indexRouter = require("./src/routes/indexRouter")
 const authRouter = require('./src/routes/authRouter')
-
+const personDataRouter = require('./src/routes/personDataRouter');
 
 const PORT = 3000;
 const app = express();
 
 connect();
-console.log();
+
 app.set("view engine", "hbs");
 app.set("cookieName", "userCookie");
 app.set('views', path.join(__dirname, 'src', 'views'));
@@ -60,6 +60,8 @@ app.use((req, res, next) => {
 
 app.use("/", indexRouter)
 app.use('/auth', authRouter)
+app.use('/person', personDataRouter)
+
 
 
 app.listen(PORT, () => {
