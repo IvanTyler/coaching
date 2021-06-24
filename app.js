@@ -9,11 +9,9 @@ const { DB_HOST, DB_NAME, DB_PORT } = require("./src/db/config")
 const secretKey = '123sdsdsd3355465fgrgdfgfdgfgd4677'
 const { connect } = require("./src/db/connect")
 const hbs = require("hbs")
-// const {personButton} = require('./src/helper-func/helper')
 
 const indexRouter = require("./src/routes/indexRouter")
 const authRouter = require('./src/routes/authRouter')
-const userRouter = require('./src/routes/userRouter')
 
 
 const PORT = 3000;
@@ -46,7 +44,6 @@ app.use(sessionParser);
 
 app.use(express.static(path.join(process.env.PWD, "public")));
 hbs.registerPartials(path.join(process.env.PWD, "src", "views", "partials"));
-// hbs.registerHelper('personButton', personButton)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
