@@ -20,4 +20,5 @@ const dbConnectionURL = 'mongodb+srv://ivan:WpwTV6YCrJVUg4eX@cluster0.vq9sl.mong
 module.exports = {
     dbConnectionURL,
     options,
+    DB_HOST, DB_NAME, DB_PORT
 };
