@@ -7,21 +7,21 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Главная</a>
         </li>
-        {{!-- {{#if email}} --}}
+        {{#if email}}
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/users">Профиль: {{name}}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/auth/signout">Выйти</a>
         </li>
-        {{!-- {{else}} --}}
+        {{else}}
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/auth/signin">Войти</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/auth/signup">Регистрация</a>
         </li>
-        {{!-- {{/if}} --}}
+        {{/if}}
       </ul>
     </div>
   </div>

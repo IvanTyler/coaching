@@ -4,10 +4,10 @@ const path = require("path")
 const sessions = require("express-session")
 const MongoStore = require("connect-mongo")
 const morgan = require('morgan')
-const { DB_HOST, DB_NAME, DB_PORT } = require("./src/db/config")
+const { DB_HOST, DB_NAME, DB_PORT } = require("./db/config")
 // const secretKey = require("crypto").randomBytes(64).toString("hex");
 const secretKey = '123sdsdsd3355465fgrgdfgfdgfgd4677'
-const { connect } = require("./src/db/connect")
+const { connect } = require("./db/connect")
 const hbs = require("hbs")
 
 const indexRouter = require("./src/routes/indexRouter")

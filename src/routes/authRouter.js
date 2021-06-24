@@ -3,7 +3,7 @@ const router = Router()
 
 const bcrypt = require('bcrypt')
 const saltRound = 10
-const User = require('../db/models/userModel')
+const User = require('../../db/models/userModel')
 
 //РЕГИСТРАЦИЯ
 router.get('/signup',  (req, res) => {
