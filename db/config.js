@@ -12,9 +12,11 @@ const DB_HOST = 'localhost';
 const DB_NAME = 'coaching';
 const DB_PORT = 27017;
 
-const dbConnectionURL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
-// mongodb://localhost:27017/p1w3d3
+// const dbConnectionURL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
+const dbConnectionURL = 'mongodb+srv://ivan:WpwTV6YCrJVUg4eX@cluster0.vq9sl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
+
+// atlas pass   ivan : WpwTV6YCrJVUg4eX
 module.exports = {
     dbConnectionURL,
     options,
