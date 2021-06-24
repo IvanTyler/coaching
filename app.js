@@ -12,6 +12,8 @@ const hbs = require("hbs")
 
 const indexRouter = require("./src/routes/indexRouter")
 const authRouter = require('./src/routes/authRouter')
+const clientRouter = require("./src/routes/clientRouter")
+const dateRouter = require('./src/routes/dateRouter')
 
 
 const PORT = 3000;
@@ -57,9 +59,10 @@ app.use((req, res, next) => {
   next();
 });
 
-
-app.use("/", indexRouter)
+app.use('/client', dateRouter)
+app.use('/client', clientRouter)
 app.use('/auth', authRouter)
+app.use("/", indexRouter)
 
 
 app.listen(PORT, () => {
