@@ -21,9 +21,9 @@ const usersSchema = mongoose.Schema({
   photo: {
     type: String,
   },
-  choosedSession: {
+  choosedSession: [{
     type: mongoose.Schema.Types.ObjectId, ref: 'Session'
-  },
+  }],
   rating: {
     type: Number,
     default: 0
