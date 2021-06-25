@@ -1,7 +1,7 @@
-const connect = require('./db/db');
-const Deck = require('./models/deck.model');
-const Card = require('./models/card.model');
-const { Session } = require('express-session');
+const connect = require('./db/connect');
+const User = require('./db/models/userModel');
+const Session = require('./db/models/sessionsModel');
+// const { Session } = require('express-session');
 
 const users = [
   {
@@ -45,62 +45,65 @@ const users = [
 
 const sessions = [
   {
-    date: new Date(2020,01,12),
-    timeFirst: '11 00',
-    timeLast: '19 00',
+    date: new Date(2022,01,12),
+    timeFirst: '11:00',
+    timeLast: '19:00',
     payment: false,
     donation: false,
     feedback: true,
   },
   {
-    date: new Date(2020,03,10),
-    timeFirst: '10 00',
-    timeLast: '20 00',
+    date: new Date(2022,03,10),
+    timeFirst: '10:00',
+    timeLast: '20:00',
     payment: true,
     donation: true,
     feedback: false,
   },
   {
-    date: new Date(2020,02,22),
-    timeFirst: '13 00',
-    timeLast: '19 00',
+    date: new Date(2023,02,22),
+    timeFirst: '13:00',
+    timeLast: '19:00',
     payment: true,
     donation: false,
     feedback: false,
   },
   {
-    date: new Date(2020,01,15),
-    timeFirst: '11 00',
-    timeLast: '17 00',
+    date: new Date(2023,01,15),
+    timeFirst: '11:00',
+    timeLast: '17:00',
     payment: false,
     donation: true,
     feedback: true,
   },
   {
-    date: new Date(2020,03,09),
-    timeFirst: '11 00',
-    timeLast: '19 00',
+    date: new Date(2022,03,09),
+    timeFirst: '11:00',
+    timeLast: '19:00',
     payment: false,
     donation: false,
     feedback: true,
   },
-
 ];
 
 
-const sessions = [
-  {
-    question: 'Для чего барсу такой длинный хвост?',
-    anwser: 'для баланса',
-    topic: 'Барсы',
-  },
-];
+// const sessions = [
+//   {
+//     question: 'Для чего барсу такой длинный хвост?',
+//     anwser: 'для баланса',
+//     topic: 'Барсы',
+//   },
+// ];
 
-connect();
+// connect();
 
 async function seed() {
-  await Promise.all(users.map((el) => User.create(el)));
-  await Promise.all(sessions.map((el) => Session.create(el)));
+  try {
+    await Promise.all(users.map((el) => User.create(el)));
+    await Promise.all(sessions.map((el) => Session.create(el)));    
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 // seed();
@@ -115,3 +118,5 @@ async function main() {
 }
 
 // main();
+
+module.exports = seed
