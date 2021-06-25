@@ -5,7 +5,7 @@ const sessionSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
     },
     date: {
-        type: String,
+        type: Date,
         required: true,
     },
     timeFirst: {
@@ -25,6 +25,9 @@ const sessionSchema = mongoose.Schema({
     feedback: {
         type: Boolean,
     },
+    client: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'User'
+    }
 })
 
 module.exports = mongoose.model('Session', sessionSchema);
