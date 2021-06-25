@@ -6,12 +6,12 @@ const saltRound = 10
 const User = require('../../db/models/userModel')
 
 //РЕГИСТРАЦИЯ
-router.get('/signup',  (req, res) => {
+router.get('/signup', (req, res) => {
   res.render('signup')
 })
 
-router.post('/signup', async (req, res) => {  
-  const {firstName, lastName, email, password} = req.body
+router.post('/signup', async (req, res) => {
+  const { firstName, lastName, email, password } = req.body
   console.log(req.body);
   const hash = await bcrypt.hash(password, saltRound);
 
@@ -23,7 +23,7 @@ router.post('/signup', async (req, res) => {
       password: hash,
     });
 
-    if(newUser){      
+    if (newUser) {
       req.session.user = {
         id: newUser._id,
         firstName: newUser.firstName,
@@ -31,10 +31,10 @@ router.post('/signup', async (req, res) => {
       }
     }
 
-    return res.redirect("/");
+    return res.redirect("/user/profile");
   } catch (err) {
-  const wrongData = 'Логин и почта должны быть уникальны!';
-  return res.status(418).render("signup", {wrongData});
+    const wrongData = 'Логин и почта должны быть уникальны!';
+    return res.status(418).render("signup", { wrongData });
   }
 })
 
@@ -47,20 +47,20 @@ router.get('/signin', (req, res) => {
 router.post('/signin', async (req, res) => {
   const { email, password } = req.body
   const wrongPass = 'Неверный пароль!'
-  try{
-    const findUser = await User.findOne({email})
+  try {
+    const findUser = await User.findOne({ email })
     const checkPassword = await bcrypt.compare(password, findUser.password);
-    
-    if(checkPassword) {
+
+    if (checkPassword) {
       req.session.newId = findUser._id;
       req.session.user = {
         id: findUser._id,
         firstName: findUser.firstName,
         email: findUser.email,
       }
-      
-      return res.redirect("/");
-    } else {      
+
+      return res.redirect("/user/profile");
+    } else {
       return res.status(418).render("signin", { wrongPass });
     }
   } catch (err) {
@@ -70,7 +70,7 @@ router.post('/signin', async (req, res) => {
 
 
 //ЛОГАУТ/КОНЕЦ СЕССИИ
-router.get ('/signout', (req, res) => {
+router.get('/signout', (req, res) => {
   req.session.destroy();
   res.clearCookie(req.app.get("cookieName"));
   res.redirect("/");

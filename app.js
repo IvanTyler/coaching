@@ -14,6 +14,7 @@ const indexRouter = require("./src/routes/indexRouter")
 const authRouter = require('./src/routes/authRouter')
 const clientRouter = require("./src/routes/clientRouter")
 const dateRouter = require('./src/routes/dateRouter')
+const profileRouter = require('./src/routes/profileRouter')
 
 
 const PORT = 3000;
@@ -59,10 +60,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/client', dateRouter)
-app.use('/client', clientRouter)
+app.use('/user', dateRouter)
+app.use('/user', clientRouter)
 app.use('/auth', authRouter)
 app.use("/", indexRouter)
+app.use('/user', profileRouter)
 
 
 app.listen(PORT, () => {

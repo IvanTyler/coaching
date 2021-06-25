@@ -9,8 +9,12 @@ const sessionSchema = mongoose.Schema({
     required: true,
     min: Date()
   },
-  time: {
-    type: Date,
+  timeFirst: {
+    type: String,
+    required: true,
+  },
+  timeLast: {
+    type: String,
     required: true,
   },
   payment: {

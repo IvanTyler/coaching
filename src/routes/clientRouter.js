@@ -7,15 +7,22 @@ const Session = require('../../db/models/sessionsModel')
 router
   .route('/')
   .get(async (req, res) => {
-    const allSessions = await Session.find({ _id: res.locals.id })
-    const upcommingSessions = allSessions.find({
-      "date": { $gte: Date() }
-    });
-    const completedSessions = await allSessions.find({
-      "date": { $lte: Date() }
-    });
+    const allSessions = await Session.find({ client: res.locals.id })
+
+    const upcommingSessions = allSessions.filter((session) => session.date > Date());
+
+    // {
+    //   "date": { $gte: Date() }
+    // }
+
+    const completedSessions = allSessions.filter((session) => session.date < Date())
+
+    //   {
+    //   "date": { $lte: Date() }
+    // });
     console.log('upcommingSessions ===>', upcommingSessions)
-    res.render('client', { upcommingSessions }, { completedSessions })
+    res.render('profile', { upcommingSessions , completedSessions })
   })
 module.exports = router
+
 
