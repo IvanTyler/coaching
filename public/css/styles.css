@@ -1,6 +1,7 @@
 * {
     text-decoration: none !important;
 }
+/* section-profile-choice-role*/
 
 .btn-main{
     display: inline-flex;
@@ -68,3 +69,5 @@
 .wrapper-profile-choice-role-session.completed {
     margin-top: 20px;
 }
+
+/* section-profile-choice-role*/
