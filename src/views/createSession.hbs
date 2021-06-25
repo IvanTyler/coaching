@@ -1,0 +1,42 @@
+<div class="container container-create-session">
+    <form method="POST" action="/user/profile" class="formCreateSession">
+        <h3 class="formCreateSession-title">Форма создания сессии</h3>
+        <div class="wrapper-content-form-data">
+            <div class="wrapper-dateTime-session">
+                <div class="pick-date">
+                    <label for="date" class="pick-date-label">Выбирите дату:</label>
+                    <input id="date" class="pick-date-input" type="date" name="date" placeholder="Выбирите дату">
+                </div>
+
+                <div class="wrapper-pick-time">
+                    <h2 class="payment-method-title">Укажите начало сессии</h2>
+                    <div class="pick-time">
+                        <label for="timeFirst" class="pick-time-label">Начало сессии: </label>
+                        <input required id="timeFirst" class="pick-time-input" type="time" name="timeFirst" placeholder="19 : 00">
+                    </div>
+                    <div class="pick-time">
+                        <label required for="timeLast" class="pick-time-label">Конец сессии: </label>
+                        <input required id="timeLast" class="pick-time-input" type="time" name="timeLast" placeholder="20 : 00">
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-method">
+                <h2 class="payment-method-title">Payment method</h2>
+                <div class="payment-metgod-item">
+                    <input id="Donation" type="checkbox" name="donation">
+                    <label for="Donation" class="pick-time-label">Donation</label>
+                </div>
+                <div class="payment-metgod-item">
+                    <input id="Payment" type="checkbox" name="payment">
+                    <label for="Payment" class="pick-time-label">Payment</label>
+                </div>
+                <div class="payment-metgod-item">
+                    <input id="Feedback" type="checkbox" name="feedback">
+                    <label for="Feedback" class="pick-time-label">Feedback</label>
+                </div>
+            </div>
+            <button type="submit" class="btn-main make-session">Make session</button>
+        </div>
+    </form>
+</div>
