@@ -1,23 +1,35 @@
-<section class='section-profile-choice-role'>
-  <div class='profile-choice-role-block coach'>
-    <div class='profile-choice-role-content'>
-      <h2 class='profile-choice-role-title'>Coach</h2>
-      <div class='wrapper-profile-choice-role-session'>
-        <h3 class='profile-choice-role-title-session'>Your <b>maked</b> sessions:</h3>
-        <div class='profile-choice-role-current-session'>
-          <span class='choice-role-current-session-date'>28/04/2021 14:00</span>
 
-          <div class='choice-role-edit-img'>
-            <a class='choice-role-current-session-edit' href=''></a>
-            <img class='choice-role-current-session-img' src='/img/delete-session.png' alt='' />
-          </div>
+<div class="container container-profile">
+    <section class="section-profile-choice-role">
+        <div class="profile-choice-role-block coach">
+            <div class="profile-choice-role-content">
+                <h2 class="profile-choice-role-title">Coach</h2>
+                <div class="wrapper-profile-choice-role-session">
+                    <h3 class="profile-choice-role-title-session">Your <b>maked</b> sessions:</h3>
+                    {{#if allSession.length}}
+                    {{#each allSession}}
+                        <div data-id="{{this._id}}" class="profile-choice-role-current-session">
+                            <span class="choice-role-current-session-date">
+                                {{this.date}} {{this.timeFirst}} - {{this.timeLast}}
+                            </span>
+
+                            <div class="choice-role-edit-img">
+                                <a class="choice-role-current-session-edit" href="/user/editSession/{{this._id}}">
+                                    <img class="choice-role-current-session-img" src="/img/edit-session.svg" alt="">
+                                </a>
+                                <img data-delete class="choice-role-current-session-img" src="/img/delete-session.png" alt="">
+                            </div>
+                        </div>
+                    {{/each}}
+                    {{else}}
+                    <div class="no-post-inst">Сессий нет</div>
+                    {{/if}}
+                </div>
+                <a href="/user/createSession" class="btn-main create-session">Create session</a>
+            </div>
         </div>
-      </div>
-      <a href='' class='btn-main create-session'>Create session</a>
-    </div>
-  </div>
 
-  <div class='profile-choice-role-block client'>
+       <div class='profile-choice-role-block client'>
     <div class='profile-choice-role-content'>
       <h2 class='profile-choice-role-title'>Client</h2>
       <div class='wrapper-profile-choice-role-session upcoming'>
@@ -57,3 +69,4 @@
     </div>
   </div>
 </section>
+</div>

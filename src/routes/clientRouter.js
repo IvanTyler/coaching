@@ -24,5 +24,3 @@ router
     res.render('profile', { upcommingSessions , completedSessions })
   })
 module.exports = router
-
-

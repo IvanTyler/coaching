@@ -1,0 +1,9 @@
+
+{{#if session}}
+<form method="POST">
+    <div>Изменить дату: <input type="date" name="date" value="{{session.date}}"></div>
+    <div>Изменить начальное время: <input type="time" name="timeFirst" value="{{session.timeFirst}}"></div>
+    <div>Изменить конечное время: <input type="time" name="timeLast" value="{{session.timeLast}}"></div>
+    <button type="submit" class="btn-main make-session">Изменить данные сессии</button>
+</form>
+{{/if}}

@@ -1,10 +1,56 @@
+body {
+  background: url("../img/main3.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  /* color: #fff */
+}
+
+h2 {
+  padding-top: 27px
+}
+
+/* .logo {
+  background: url("../img/logo.jpg") no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 56px;
+} */
+
+.index-h1 {
+  text-align: center;
+  padding-top: 100px;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.index-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index-btn {
+  width: 130px;
+}
+
+.form-signup,
+.form-signin {
+  /* padding-left: 660px; */
+  width: 600px;
+  margin: 0 auto;
+}
 * {
     text-decoration: none !important;
 }
 /* section-profile-choice-role*/
 
+.bg-light {
+    box-shadow: 1px 2px 6px;
+}
+
 .btn-main{
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: #0d6efd;
@@ -13,6 +59,7 @@
     padding: 0 20px;
     border-radius: 5px;
 }
+
 .btn-main:hover{
     color: #fff;
 }
@@ -47,9 +94,13 @@
 }
 
 .choice-role-current-session-img{
+    width: 20px;
+    cursor: pointer;
+}
+
+.choice-role-current-session-img.client{
     position: absolute;
-    left: -40px;
-    width: 30px;
+    left: -30px;
 }
 
 .profile-choice-role-content .btn-main{
@@ -70,4 +121,67 @@
     margin-top: 20px;
 }
 
-/* section-profile-choice-role*/
+/* section-profile-choice-role */
+
+
+/* formCreateSession */
+.container-create-session{
+    margin-top: 30px;
+}
+
+.formCreateSession{
+    background-color: #ebf3f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 6px;
+}
+
+.formCreateSession-title{
+    text-align: center;
+}
+
+.wrapper-content-form-data{
+    max-width: 360px;
+    margin: 40px auto 0;
+}
+
+.wrapper-pick-time .pick-time,
+.wrapper-dateTime-session .pick-date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper-pick-time .pick-time:not(:first-child){
+    margin-top: 10px;
+}
+
+.wrapper-pick-time .pick-time label,
+.wrapper-dateTime-session .pick-date label{
+    width: 120px;
+    margin-right: 10px;
+}
+
+.payment-method-title{
+    font-size: 22px;
+}
+
+.wrapper-pick-time, .payment-method{
+    margin-top: 20px;
+}
+
+.btn-main.make-session {
+    margin: 20px auto 0;
+}
+
+.pick-time-input,
+.pick-date-input {
+    max-width: 200px;
+    width: 100%;
+    padding: 3px 6px;
+}
+/* formCreateSession */
+
+.container-profile {
+    margin-top: 30px;
+}
