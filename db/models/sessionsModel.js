@@ -5,11 +5,15 @@ const sessionSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
     },
     date:{
-        type: Number,
+        type: String,
         required: true,
     },
-    time:{
-        type: Number,
+    timeFirst:{
+        type: String,
+        required: true,
+    },
+    timeLast:{
+        type: String,
         required: true,
     },
     payment:{
