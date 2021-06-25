@@ -14,7 +14,6 @@ const indexRouter = require("./src/routes/indexRouter")
 const authRouter = require('./src/routes/authRouter')
 const profileRouter = require('./src/routes/profileRouter')
 
-
 const PORT = 3000;
 const app = express();
 

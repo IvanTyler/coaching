@@ -3,6 +3,10 @@
 }
 /* section-profile-choice-role*/
 
+.bg-light {
+    box-shadow: 1px 2px 6px;
+}
+
 .btn-main{
     display: flex;
     align-items: center;
@@ -13,6 +17,7 @@
     padding: 0 20px;
     border-radius: 5px;
 }
+
 .btn-main:hover{
     color: #fff;
 }
@@ -122,4 +127,15 @@
 .btn-main.make-session {
     margin: 20px auto 0;
 }
+
+.pick-time-input,
+.pick-date-input {
+    max-width: 200px;
+    width: 100%;
+    padding: 3px 6px;
+}
 /* formCreateSession */
+
+.container-profile {
+    margin-top: 30px;
+}

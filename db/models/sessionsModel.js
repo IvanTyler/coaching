@@ -1,29 +1,29 @@
 const mongoose = require('mongoose');
 
 const sessionSchema = mongoose.Schema({
-    creator:{
+    creator: {
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
     },
-    date:{
+    date: {
         type: String,
         required: true,
     },
-    timeFirst:{
+    timeFirst: {
         type: String,
         required: true,
     },
-    timeLast:{
+    timeLast: {
         type: String,
         required: true,
     },
-    payment:{
+    payment: {
         type: Boolean,
     },
-    donation:{
+    donation: {
         type: Boolean,
     },
-    feedback:{
-      type: Boolean,
+    feedback: {
+        type: Boolean,
     },
 })
 
