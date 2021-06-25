@@ -13,9 +13,9 @@ router.get('/profile', async (req, res) => {
 router.post('/profile', async (req, res) => {
   let { date, timeFirst, timeLast, donation, payment, feedback } = req.body
   let dataFromCoach = { 
-    date, 
-    timeFirst, 
-    timeLast, 
+    date: date.toLocalString(), 
+    timeFirst: timeFirst.toLocalString(), 
+    timeLast: timeLast.toLocalString(), 
     donation: Boolean(donation), 
     payment: Boolean(payment), 
     feedback: Boolean(feedback) 
