@@ -9,11 +9,11 @@ const options = {
 };
 
 const DB_HOST = 'localhost';
-const DB_NAME = 'coaching';
+const DB_NAME = 'myFirstDatabase';
 const DB_PORT = 27017;
 
 // const dbConnectionURL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
-const dbConnectionURL = 'mongodb+srv://ivan:WpwTV6YCrJVUg4eX@cluster0.vq9sl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const dbConnectionURL = `mongodb+srv://ivan:WpwTV6YCrJVUg4eX@cluster0.vq9sl.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 
 
 // atlas password   ivan : WpwTV6YCrJVUg4eX
