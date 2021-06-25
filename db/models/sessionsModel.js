@@ -4,9 +4,6 @@ const sessionSchema = mongoose.Schema({
   creator: {
     type: mongoose.Schema.Types.ObjectId, ref: 'User',
   },
-  client: [{
-    type: mongoose.Schema.Types.ObjectId, ref: 'User',
-  }],
   date: {
     type: Date,
     required: true,
@@ -28,6 +25,9 @@ const sessionSchema = mongoose.Schema({
   },
   feedback: {
     type: Boolean,
+  },
+  client: {
+    type: mongoose.Schema.Types.ObjectId, ref: 'User',
   },
 })
 

@@ -1,1 +1,40 @@
+body {
+  background: url("../img/main2.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  /* color: #fff */
+}
 
+h2 {
+  padding-top: 27px
+}
+
+/* .logo {
+  background: url("../img/logo.jpg") no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 56px;
+} */
+
+.index-h1 {
+  text-align: center;
+  padding-top: 100px;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.index-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.index-btn {
+  width: 130px;
+}
+
+.form-signup,
+.form-signin {
+  padding-left: 660px;
+}
