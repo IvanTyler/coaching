@@ -45,5 +45,15 @@ router.post('/editSession/:id', async (req, res) => {
   res.redirect('/user/profile')
 })
 
+router.delete('/profile/:id', async (req, res) => {
+  const idSession = req.params.id
+  try {
+    await Sessions.findByIdAndRemove(idSession)
+    return res.sendStatus(200)
+  } catch (error) {
+    return res.sendStatus(500)
+  }
+})
+
 
 module.exports = router

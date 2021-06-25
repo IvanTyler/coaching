@@ -53,6 +53,7 @@
 
 .choice-role-current-session-img{
     width: 20px;
+    cursor: pointer;
 }
 
 .choice-role-current-session-img.client{
