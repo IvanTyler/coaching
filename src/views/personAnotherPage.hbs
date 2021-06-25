@@ -1,13 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/">Profile</a>
-                <a class="nav-link active" href="/">Logout</a>
-            </div>
-        </div>
-    </div>
-</nav>
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--    <div class="container-fluid">-->
+<!--        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
+<!--            <div class="navbar-nav">-->
+<!--                <a class="nav-link active" aria-current="page" href="/">Profile</a>-->
+<!--                <a class="nav-link active" href="/">Logout</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
 
 
 
@@ -15,23 +15,17 @@
     <div class="row g-5">
         <div class="col-md-7">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLIySS0D_jSgSTjCJKVIC5rZUjYoBMM1POLA&usqp=CAU" class="img-fluid rounded-start" alt="...">
-            <!--            <a href="">Choose photo</a>-->
         </div>
         <div class="col-md-3">
             <div class="card-body">
-                <h3 class="card-title">FirstName:</h3>
-                <h3 class="card-title">LastName:</h3>
-                <h5 class="card-title">Created sessions:</h5>
-                12.45.2021 19:00 - 21:00
-                <button type="button" class="btn btn-success">Choose session</button>
-                <h5 class="card-title">Upcoming sessions:</h5>
-                12.45.2021 19:00 - 21:00
-                <button type="button" class="btn btn-success">Choose session</button>
+                <h3 class="card-title">FirstName: {{user.firstName}}</h3>
+                <h3 class="card-title">LastName: {{user.lastName}}</h3>
+                <h5 class="card-title">Created sessions:{{session.date}}</h5>
+                <button type="button" class="btn btn-success btn-choose">Choose session</button>
+                <h5 class="card-title-sessions">Upcoming sessions:{{session.date}}</h5>
+                <button type="button" class="btn btn-success btn-choose">Choose session</button>
             </div>
-            <!--            <div class="card-title" style="min-height: auto">-->
-            <!--              -->
-            <!--            </div>-->
         </div>
-            <button type="button" class="btn-back">Back</button>
+        <a href="/"><button type="button" class="btn-back-link">Back</button></a>
     </div>
 </div>

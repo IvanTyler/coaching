@@ -22,8 +22,12 @@ const usersSchema = mongoose.Schema({
         type: String,
     },
     choosedSession:{
-        type: mongoose.Schema.Types.ObjectId, ref: 'Sessions'
-    }
+        type: mongoose.Schema.Types.ObjectId, ref: 'Session'
+    },
+    rating:{
+        type: Number,
+        default: 0,
+    },
 })
 
 module.exports = mongoose.model('User', usersSchema)

@@ -48,11 +48,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
+
 app.use((req, res, next) => {
   if (req.session.user?.id) {
     res.locals.id = req.session.user.id;
     res.locals.name = req.session.user.firstName;
+    res.locals.surname = req.session.user.lastName;
     res.locals.email = req.session.user.email;
+    // res.locals.date = req.session.user.date;
   }
   next();
 });

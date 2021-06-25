@@ -10,7 +10,7 @@ router.get('/signup',  (req, res) => {
   res.render('signup')
 })
 
-router.post('/signup', async (req, res) => {  
+router.post('/signup', async (req, res) => {
   const {firstName, lastName, email, password} = req.body
   console.log(req.body);
   const hash = await bcrypt.hash(password, saltRound);
@@ -23,18 +23,20 @@ router.post('/signup', async (req, res) => {
       password: hash,
     });
 
-    if(newUser){      
+    if(newUser){
       req.session.user = {
         id: newUser._id,
         firstName: newUser.firstName,
+        lastName: newUser.lastName,
         email: newUser.email,
+        date: newUser.date,
       }
     }
 
     return res.redirect("/");
   } catch (err) {
   const wrongData = 'Логин и почта должны быть уникальны!';
-  return res.status(418).render("signup", {wrongData});
+  return res.status(418).render("signup", { wrongData });
   }
 })
 
@@ -48,19 +50,21 @@ router.post('/signin', async (req, res) => {
   const { email, password } = req.body
   const wrongPass = 'Неверный пароль!'
   try{
-    const findUser = await User.findOne({email})
+    const findUser = await User.findOne({ email });
     const checkPassword = await bcrypt.compare(password, findUser.password);
-    
+
     if(checkPassword) {
       req.session.newId = findUser._id;
       req.session.user = {
         id: findUser._id,
         firstName: findUser.firstName,
+        lastName: findUser.lastName,
         email: findUser.email,
+        date: findUser.date,
       }
-      
+
       return res.redirect("/");
-    } else {      
+    } else {
       return res.status(418).render("signin", { wrongPass });
     }
   } catch (err) {

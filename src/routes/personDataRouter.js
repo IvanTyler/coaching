@@ -8,21 +8,26 @@ router.route('/data')
         res.render('personData')
     })
     .post(async (req, res) => {
-        const { firstName, lastName, date } = req.body;
-        console.log('req.body------->>>>>', req.body);
+        const { firstName, lastName } = req.body;
         try{
             const findUser = await User.findOne({ firstName, lastName });
-            console.log('findUser----->>>>', findUser);
-            const findDataFromASession = await Session.findOne({ date });
-            console.log('findDataFromASession------->>>>>', findDataFromASession);
         }catch (error){
-            console.log('errror--->>>', error)
+            res.status(418).redirect('/');
         }
     })
 
-router.route('/page')
-    .get((req, res) => {
-        res.render('personAnotherPage')
+router.route('/page/:id')
+    .get(async (req, res) => {
+        const currentId = req.params.id;
+        try{
+            const currentUser = await User.findById(currentId);
+            console.log('findUser------>>>>', currentUser );
+            const findSession = await Session.find({ creator: res.locals._id });
+            findSession.filter((el) => el.date > new Date());
+            if (currentUser ) return res.render('personAnotherPage', { user: currentUser  });
+        }catch(error){
+            return res.status(418).redirect('/');
+        }
     })
 
 module.exports = router;

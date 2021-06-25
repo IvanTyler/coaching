@@ -12,9 +12,37 @@
     padding: 0px;
     width: 100px;
     margin-left: 30px;
+
 }
 
 .card-title {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
+.btn-choose{
+    margin-top: 50px;
+}
+.card-title-sessions{
+    margin-top: 50px;
+}
+
+.btn-back-link{
+    margin-left: 62%;
+    background-color: steelblue;
+    text-decoration: none;
+    width: 144px;
+    padding: 7px 60px;
+    border: 2px solid darkgreen;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.btn-back-link1 {
+    margin-left: 5%;
+    background-color: violet;
+    text-decoration: none;
+    width: 100px;
+    padding: -3px 60px;
+    border: 2px solid darkgreen;
+    border-radius: 5px;
+    font-size: 22px;
+}

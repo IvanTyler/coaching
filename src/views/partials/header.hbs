@@ -9,8 +9,14 @@
         </li>
         {{#if email}}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/users">Профиль: {{name}}</a>
+          <a class="nav-link active" aria-current="page" href="#">{{name}}</a>
         </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/person/data">Person self</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/person/page/{{id}}">Person another</a>
+            </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/auth/signout">Выйти</a>
         </li>
