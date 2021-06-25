@@ -12,6 +12,7 @@ const hbs = require("hbs")
 
 const indexRouter = require("./src/routes/indexRouter")
 const authRouter = require('./src/routes/authRouter')
+const profileRouter = require('./src/routes/profileRouter')
 const clientRouter = require("./src/routes/clientRouter")
 const dateRouter = require('./src/routes/dateRouter')
 
@@ -62,6 +63,7 @@ app.use((req, res, next) => {
 app.use('/client', dateRouter)
 app.use('/client', clientRouter)
 app.use('/auth', authRouter)
+app.use('/user', profileRouter)
 app.use("/", indexRouter)
 
 

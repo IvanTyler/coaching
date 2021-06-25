@@ -16,7 +16,7 @@ const DB_PORT = 27017;
 const dbConnectionURL = `mongodb+srv://ivan:WpwTV6YCrJVUg4eX@cluster0.vq9sl.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 
 
-// atlas pass   ivan : WpwTV6YCrJVUg4eX
+// atlas password   ivan : WpwTV6YCrJVUg4eX
 module.exports = {
     dbConnectionURL,
     options,
