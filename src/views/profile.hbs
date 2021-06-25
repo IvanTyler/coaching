@@ -1,3 +1,4 @@
+
 <div class="container container-profile">
     <section class="section-profile-choice-role">
         <div class="profile-choice-role-block coach">
@@ -28,35 +29,44 @@
             </div>
         </div>
 
-        <div class="profile-choice-role-block client">
-            <div class="profile-choice-role-content">
-                <h2 class="profile-choice-role-title">Client</h2>
-                <div class="wrapper-profile-choice-role-session upcoming">
-                    <h3 class="profile-choice-role-title-session">
-                        <img class="choice-role-current-session-img client" src="/img/calendar-session.jpg" alt="">
-                        Your <b>Client</b> sessions:
-                    </h3>
-                    <div class="profile-choice-role-current-session">
-                        <a href="" class="choice-role-current-session-client">
-                            28/09/2021 12:00 Petr Petrov
-                        </a>
-                    </div>
-                </div>
+       <div class='profile-choice-role-block client'>
+    <div class='profile-choice-role-content'>
+      <h2 class='profile-choice-role-title'>Client</h2>
+      <div class='wrapper-profile-choice-role-session upcoming'>
+        <h3 class='profile-choice-role-title-session'>
+          <img class='choice-role-current-session-img' src='/img/calendar-session.jpg' alt='' />
+          Your
+          <b>Client</b>
+          sessions:
+        </h3>
 
-                <div class="wrapper-profile-choice-role-session completed">
-                    <h3 class="profile-choice-role-title-session">
-                        <img class="choice-role-current-session-img" src="/img/question-icon.png" alt="">
-                        Rate pls <b>completed</b> sessions:
-                    </h3>
-                    <div class="profile-choice-role-current-session">
-                        <div class="choice-role-current-session-client">
-                            <span class="">28/09/2021 12:00 Petr Petrov</span>
-                            <div class="rating"></div>
-                        </div>
-                    </div>
-                </div>
-                <a href="" class="btn-main choose-session">Choose session</a>
-            </div>
+        <div class='profile-choice-role-current-session'>
+          {{#if upcommingSessions}}
+            {{#each upcommingSessions}}
+              <a href='' class='choice-role-current-session-client'>
+                {{28/09/2021 12:00 Petr Petrov
+              </a>
+            {{/each}}
+          {{/if}}
         </div>
-    </section>
+      </div>
+
+      <div class='wrapper-profile-choice-role-session completed'>
+        <h3 class='profile-choice-role-title-session'>
+          <img class='choice-role-current-session-img' src='/img/question-icon.png' alt='' />
+          Rate pls
+          <b>completed</b>
+          sessions:
+        </h3>
+        <div class='profile-choice-role-current-session'>
+          <div class='choice-role-current-session-client'>
+            <span class=''>28/09/2021 12:00 Petr Petrov</span>
+            <div class='rating'></div>
+          </div>
+        </div>
+      </div>
+      <a href='' class='btn-main choose-session'>Choose session</a>
+    </div>
+  </div>
+</section>
 </div>
