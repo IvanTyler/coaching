@@ -6,19 +6,19 @@ const Sessions = require('../../db/models/sessionsModel')
 router.get('/profile', async (req, res) => {
   const allSession = await Sessions.find({
     creator: req.session.user.id,
-  }).sort({ _id: -1})
+  }).sort({ _id: -1 })
   res.render('profile', { allSession })
 })
 
 router.post('/profile', async (req, res) => {
   let { date, timeFirst, timeLast, donation, payment, feedback } = req.body
-  let dataFromCoach = { 
-    date: date.toLocalString(), 
-    timeFirst: timeFirst.toLocalString(), 
-    timeLast: timeLast.toLocalString(), 
-    donation: Boolean(donation), 
-    payment: Boolean(payment), 
-    feedback: Boolean(feedback) 
+  let dataFromCoach = {
+    date,
+    timeFirst,
+    timeLast,
+    donation: Boolean(donation),
+    payment: Boolean(payment),
+    feedback: Boolean(feedback)
   }
   console.log(dataFromCoach)
   const newSession = await Sessions.create({
@@ -30,6 +30,19 @@ router.post('/profile', async (req, res) => {
 
 router.get('/createSession', (req, res) => {
   res.render('createSession')
+})
+
+router.get('/editSession/:id', async (req, res) => {
+  const id = req.params.id
+  const session = await Sessions.findById(id).sort({ _id: -1 })
+  res.render('editSession', { session })
+})
+
+router.post('/editSession/:id', async (req, res) => {
+  const id = req.params.id
+  const { date, timeFirst, timeLast } = req.body
+  const updateSession = await Sessions.findByIdAndUpdate(id, { date, timeFirst, timeLast })
+  res.redirect('/user/profile')
 })
 
 

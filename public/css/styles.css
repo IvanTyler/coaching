@@ -52,9 +52,12 @@
 }
 
 .choice-role-current-session-img{
+    width: 20px;
+}
+
+.choice-role-current-session-img.client{
     position: absolute;
-    left: -40px;
-    width: 30px;
+    left: -30px;
 }
 
 .profile-choice-role-content .btn-main{
